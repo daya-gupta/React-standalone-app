@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>react standalone..</title>
+</head>
+<body>
+	<div id="app">My APP</div>
+	<div id="app2">My APP2</div>
+	<div id="app3">My APP3</div>
+
+	<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+	
+	<script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+	
+	<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+	
+	<script type="text/babel">
+		console.log(React, ReactDOM);
+		
+		class ClassComponent extends React.Component{
+			render() {
+				return (
+					<h1>A class component..</h1>
+				);
+			}
+		}
+		ReactDOM.render(<ClassComponent />, document.querySelector('#app'));
+		
+		const FunctionalComponent = () => {
+			return (
+				<h1>A functional component..</h1>
+			);
+		}
+		ReactDOM.render(<FunctionalComponent />, document.querySelector('#app2'));
+		
+		ReactDOM.render(<h1>An inline component</h1>, document.querySelector('#app3'));
+	</script>
+</body>
+</html>
